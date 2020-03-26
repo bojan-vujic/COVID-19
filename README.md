@@ -7,15 +7,11 @@
 
 
 
-Contribute
+`Use`
 ==========
-You've discovered a bug or something else you want to change - excellent!
+All the code has been written in Python 3, though most parts would work in Python 2 as well (not tested).
 
-You've worked out a way to fix it – even better!
-
-You want to tell us about it – best of all!
-
-Start at the `contributing guide <https://matplotlib.org/devdocs/devel/contributing.html>`_!
+If you discover some bug or even worked out a way to fix it, that would be both exelent.
 
 Contact
 =======
