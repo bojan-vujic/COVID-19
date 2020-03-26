@@ -13,24 +13,14 @@ All the code has been written in Python 3, though most parts would work in Pytho
 
 If you discover some bug or even worked out a way to fix it, that would be both exelent.
 
-Contact
+`Contact`
 =======
 
-`Discourse <https://discourse.matplotlib.org/>`_ is the discussion forum for general questions and discussions and our recommended starting point.
+Any questions, comments and/or suggestions are more than welcome at:
 
-Our active mailing lists (which are mirrored on Discourse) are:
+* `Users <https://mail.python.org/mailman/listinfo/matplotlib-users>`_ mailing list:bojan.vujic@mmk.su.se
 
-* `Users <https://mail.python.org/mailman/listinfo/matplotlib-users>`_ mailing list: matplotlib-users@python.org
-* `Announcement  <https://mail.python.org/mailman/listinfo/matplotlib-announce>`_ mailing list: matplotlib-announce@python.org
-* `Development <https://mail.python.org/mailman/listinfo/matplotlib-devel>`_ mailing list: matplotlib-devel@python.org
 
 Gitter_ is for coordinating development and asking questions directly related
 to contributing to matplotlib.
 
-
-Citing Matplotlib
-=================
-If Matplotlib contributes to a project that leads to publication, please
-acknowledge this by citing Matplotlib.
-
-`A ready-made citation entry <https://matplotlib.org/citing.html>`_ is available.
