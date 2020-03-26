@@ -17,9 +17,7 @@ If you discover some bugs or even worked out a way to fix them, that would be bo
 `Contact`
 =======
 
-Any questions, comments and/or suggestions are more than welcome at:
-
-* `Users <https://mail.python.org/mailman/listinfo/matplotlib-users>`_ bojan.vujic@mmk.su.se
+Any questions, comments and/or suggestions are more than welcome at: bojan.vujic@mmk.su.se
 
 
 Gitter_ is for coordinating development and asking questions directly related
