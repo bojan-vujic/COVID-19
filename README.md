@@ -28,6 +28,3 @@ __jhu__ data-source will be used as a default source if you don't specify a *sou
 Any questions, comments and/or suggestions are more than welcome at: bojan.vujic@mmk.su.se
 
 
-Gitter_ is for coordinating development and asking questions directly related
-to contributing to matplotlib.
-
