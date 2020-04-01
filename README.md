@@ -15,7 +15,7 @@ If you discover some bugs or even worked out a way to fix them, that would be bo
 
 `Data source`
 ============
-Currently only 1 data sources have been used:
+Currently only 1 data source have been used:
 
 * https://www.worldometers.info/coronavirus/ - Webpage with updated information abount the virus around the globe.
 
