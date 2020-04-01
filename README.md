@@ -41,4 +41,5 @@ It will download the file `MM-DD-YYYY.csv` containing informations about number 
 
 Any questions, comments and/or suggestions are more than welcome at: bojan.vujic@mmk.su.se
 
+Have a nice day! :)
 
