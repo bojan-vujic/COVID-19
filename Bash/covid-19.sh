@@ -14,9 +14,6 @@ tmp="some_file.tmp"  # dummy file that will be deleted at the end.
 dir="NEW_daily"
 
 clear
-
-
-
 echo "Downloading" $worldometer
 echo ""
 
@@ -105,7 +102,6 @@ num_lines=$(wc -l $tmp | awk '{printf"%i",$1}')
 echo "Processing countries," $num_lines "in total."
 echo ""
 
-
 counter=0
 while read -r line ; do
   counter=$(( $counter + 1 ))
@@ -126,5 +122,3 @@ echo ""
 echo ""
 echo "done"
 echo "Have a nice day :)"
-
-
