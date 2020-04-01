@@ -20,6 +20,7 @@ Currently only 1 data sources have been used:
 * https://www.worldometers.info/coronavirus/ - Webpage with updated information abount the virus around the globe.
 
 To download the data for today from Worlometer, run the bash script under directory `Bash`.
+
 `Contact`
 =======
 
