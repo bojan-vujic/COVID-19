@@ -23,7 +23,6 @@ To download the data for today from Worldometer, run the bash script under direc
 
 ```
 $ bash covid-19.sh
-
 Downloading https://www.worldometers.info/coronavirus/
 
 Processing the file 04-01-2020.csv
