@@ -19,7 +19,23 @@ Currently only 1 data sources have been used:
 
 * https://www.worldometers.info/coronavirus/ - Webpage with updated information abount the virus around the globe.
 
-To download the data for today from Worldometer, run the bash script under directory `Bash`.
+To download the data for today from Worldometer, run the bash script under directory `Bash.`
+
+```
+$ bash covid-19.sh
+
+Downloading https://www.worldometers.info/coronavirus/
+
+Processing the file 04-01-2020.csv
+Processing countries, 205 in total.
+
+   Progress =   100.00 %
+
+done
+Have a nice day :)
+```
+
+It will download the file `MM-DD-YYYY.csv` containing informations about number of total confirmed cases, number of recovered and death cases for each country that are currently presented at the Worldometer page.
 
 `Contact`
 =======
