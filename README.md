@@ -15,13 +15,11 @@ If you discover some bugs or even worked out a way to fix them, that would be bo
 
 `Data source`
 ============
-Currently 2 different data sources have been used:
-
-* https://github.com/CSSEGISandData/COVID-19 - Worldwide Data repository operated by the Johns Hopkins University Center for Systems Science and Engineering. 
+Currently only 1 data sources have been used:
 
 * https://www.worldometers.info/coronavirus/ - Webpage with updated information abount the virus around the globe.
 
-
+To download the data for today from Worlometer, run the bash script under directory `Bash`.
 `Contact`
 =======
 
