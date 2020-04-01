@@ -9,7 +9,7 @@
 
 `Use`
 ==========
-All the code has been written in Python 3, though most parts would work in Python 2 as well (not tested).
+All the code for data analysis has been written in Python 3, though most parts would work in Python 2 as well (not tested).
 
 If you discover some bugs or even worked out a way to fix them, that would be both exelent.
 
