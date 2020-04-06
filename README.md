@@ -57,8 +57,9 @@ Sources for country maps:
 $ bash covid-19.sh
 Downloading https://www.worldometers.info/coronavirus/
 
-Processing the file 04-06-2020.csv
-Processing countries, 211 in total.
+Processing the file 04-06-2020.html
+Converting html file using html2txt.
+Processing countries, 212 in total.
 
    Progress =   100.00 %
 
