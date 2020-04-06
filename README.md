@@ -1,8 +1,6 @@
 # `COVID-19 data and graphs`
 
-<p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/World_lin.jpg" alt="World COVID-19 prediction" width="800"></p>
-
-<p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Italy_lin.jpg" alt="Italy COVID-19 prediction" width="800"></p>
+<p align="left"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/World_lin.jpg" alt="World COVID-19 prediction" width="600"></p><p align="right"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Italy_lin.jpg" alt="Italy COVID-19 prediction" width="600"></p>
 
 <p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Sweden_lin.jpg" alt="Sweden COVID-19 prediction" width="800"></p>
 
