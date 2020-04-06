@@ -45,7 +45,7 @@ Currently only 1 data source have been used for number of cases:
 
 * https://www.worldometers.info/coronavirus/ - Webpage with updated information abount the virus around the globe.
 
-To download the data for today from Worldometer, run the bash script under directory `Bash.`
+To download the data for today from Worldometer, run the bash script [`covid-19.sh`.](https://github.com/bojan-vujic/COVID-19/blob/master/Scripts/covid-19.sh)
 
 Sources for country flags:
 * https://en.wikipedia.org/wiki/Gallery_of_sovereign_state_flags
