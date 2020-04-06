@@ -1,16 +1,18 @@
 # `COVID-19 data and graphs`
 
+World
+-----
 <p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_prediction/plots/World_lin.jpg" alt="World COVID-19 prediction" width="800"></p>
 <p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_current/plots/World_lin.jpg" alt="World COVID-19 prediction" width="800"></p>
 
 <p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_prediction/plots/Italy_lin.jpg" alt="Italy COVID-19 prediction" width="800"></p>
 <p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_current/plots/Italy_lin.jpg" alt="Italy COVID-19 prediction" width="800"></p>
 
+Sweden
+------
 <p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_prediction/plots/Sweden_lin.jpg" alt="Sweden COVID-19 prediction" width="800"></p>
 <p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_current/plots/Sweden_lin.jpg" alt="Sweden COVID-19 prediction" width="800"></p>
 
-Installation
-------------
 
 Directories:
 -------------
