@@ -12,7 +12,10 @@
   - [`1-COVID-19_Process_daily_file_from_Worldometer.py`](https://github.com/bojan-vujic/COVID-19/blob/master/Scripts/1-COVID-19_Process_daily_file_from_Worldometer.py) Modified so it can take an argument from the command line,
   - [`2-COVID-19_Data_analysis.ipynb`](https://github.com/bojan-vujic/COVID-19/blob/master/Scripts/2-COVID-19_Data_analysis.ipynb) This notebook will make a plot of current data for number of countries,
   - [`3-COVID-19_Model_prediction-with_SUBPLOT.ipynb`](https://github.com/bojan-vujic/COVID-19/blob/master/Scripts/3-COVID-19_Model_prediction-with_SUBPLOT.ipynb) This notebook will make some fancy plots alongside predictions for number of confirmed cases,
-  - [`covid-19.sh`](https://github.com/bojan-vujic/COVID-19/blob/master/Scripts/covid-19.sh) This bash script will download current data from [`worldometer`](https://www.worldometers.info/coronavirus/) page and further process. As a result it will save 4 csv files: Confirmed, Recovered, Death, Critical.
+  - [`covid-19.sh`](https://github.com/bojan-vujic/COVID-19/blob/master/Scripts/covid-19.sh) This bash script will download current data from [`worldometer`](https://www.worldometers.info/coronavirus/) page and further process. As a result it will save 4 csv files: Confirmed, Recovered, Death, Critical. It will work together with the script [`1-COVID-19_Process_daily_file_from_Worldometer.py`](https://github.com/bojan-vujic/COVID-19/blob/master/Scripts/1-COVID-19_Process_daily_file_from_Worldometer.py).
+  - [`functions.py`](https://github.com/bojan-vujic/COVID-19/blob/master/Scripts/functions.py) It contains most of the functions wihtout which notebooks won't work.
+  
+  
   
 
 
