@@ -5,7 +5,6 @@ dir=Maps
 dir2=changed_images
 
 mkdir -p $dir2
-
 images=$(ls $dir)
 
 #yellow=rgb(255,255,0)
