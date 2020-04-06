@@ -1,5 +1,6 @@
 # `COVID-19 data and graphs`
 
+hide_toc: true
 {{ meta.width == 600 }}
 
 <p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_prediction/plots/World_lin.jpg" alt="World COVID-19 prediction" width="{{ meta.width }}"></p>
