@@ -1,14 +1,10 @@
 # `COVID-19 data and graphs`
 
-<img src="https://github.com/bojan-vujic/COVID-19/blob/master/1_World_lin.jpg" alt="World COVID-19 prediction" width="500" height="whatever">
+<p align="center">
+  <img src="https://github.com/bojan-vujic/COVID-19/blob/master/1_World_lin.jpg" alt="World COVID-19 prediction" width="500">
+</p>
 
 
-![World COVID-19 prediction](https://github.com/bojan-vujic/COVID-19/blob/master/1_World_lin.jpg | width=100)
-
-
-![World COVID-19 prediction](https://github.com/bojan-vujic/COVID-19/blob/master/1_World_lin.jpg){:class="img-responsive"}
-![World COVID-19 prediction](https://github.com/bojan-vujic/COVID-19/blob/master/1_World_lin.jpg){:height="50%" width="50%"}
-![World COVID-19 prediction](https://github.com/bojan-vujic/COVID-19/blob/master/1_World_lin.jpg){:height="700px" width="400px"}
 
 
 `Directories:`
