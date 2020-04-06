@@ -11,6 +11,7 @@
   - [`1-COVID-19_Process_daily_file_from_Worldometer.ipynb`](https://github.com/bojan-vujic/COVID-19/blob/master/Scripts/1-COVID-19_Process_daily_file_from_Worldometer.ipynb)
   - [`1-COVID-19_Process_daily_file_from_Worldometer.py`](https://github.com/bojan-vujic/COVID-19/blob/master/Scripts/1-COVID-19_Process_daily_file_from_Worldometer.py) Modified so it can take an argument from the command line,
   - [`2-COVID-19_Data_analysis.ipynb`](https://github.com/bojan-vujic/COVID-19/blob/master/Scripts/2-COVID-19_Data_analysis.ipynb) This notebook will make a plot of current data for number of countries,
+  - [`3-COVID-19_Model_prediction-with_SUBPLOT.ipynb`](https://github.com/bojan-vujic/COVID-19/blob/master/Scripts/3-COVID-19_Model_prediction-with_SUBPLOT.ipynb) This notebook will make some fancy plots alongside predictions for number of confirmed cases,
   
 
 
