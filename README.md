@@ -8,7 +8,7 @@
 * `Data/`   : csv files containing COVID-19 data for each day starting from 01-22-2020.
 * `Graphs/` : some data plots for each country
 * `Scripts` : the main directory to work from. It contains the following:
-  - `[1-COVID-19_Process_daily_file_from_Worldometer.ipynb](https://github.com/bojan-vujic/COVID-19/blob/master/Scripts/1-COVID-19_Process_daily_file_from_Worldometer.ipynb)`
+  - [`1-COVID-19_Process_daily_file_from_Worldometer.ipynb`](https://github.com/bojan-vujic/COVID-19/blob/master/Scripts/1-COVID-19_Process_daily_file_from_Worldometer.ipynb)
 
 
 
