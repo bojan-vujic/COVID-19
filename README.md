@@ -15,18 +15,24 @@ If you discover some bugs or even worked out a way to fix them, that would be bo
 
 `Data source`
 ============
-Currently only 1 data source have been used:
+Currently only 1 data source have been used for number of cases:
 
 * https://www.worldometers.info/coronavirus/ - Webpage with updated information abount the virus around the globe.
 
 To download the data for today from Worldometer, run the bash script under directory `Bash.`
 
+Sources for country flags:
+* https://en.wikipedia.org/wiki/Gallery_of_sovereign_state_flags
+
+Sources for country maps:
+* https://github.com/djaiss/mapsicon - they are further processed using a simple bash script (included) by my personal preferences.
+
 ```
 $ bash covid-19.sh
 Downloading https://www.worldometers.info/coronavirus/
 
-Processing the file 04-01-2020.csv
-Processing countries, 205 in total.
+Processing the file 04-06-2020.csv
+Processing countries, 211 in total.
 
    Progress =   100.00 %
 
