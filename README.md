@@ -1,5 +1,8 @@
 # `COVID-19 data and graphs`
 
+<img src="https://github.com/bojan-vujic/COVID-19/blob/master/1_World_lin.jpg" alt="World COVID-19 prediction" width="100" height="whatever">
+
+
 ![World COVID-19 prediction](https://github.com/bojan-vujic/COVID-19/blob/master/1_World_lin.jpg | width=100)
 
 
