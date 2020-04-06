@@ -1,6 +1,6 @@
 # `COVID-19 data and graphs`
 
-![World COVID-19 prediction](https://github.com/bojan-vujic/COVID-19/blob/master/1_World_lin.jpg)
+![World COVID-19 prediction](https://github.com/bojan-vujic/COVID-19/blob/master/1_World_lin.jpg | width=100)
 
 
 
