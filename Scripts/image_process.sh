@@ -1,17 +1,17 @@
+#!/bin/bash
 
-
-dir=World
+# This script will process images from folder Maps and save them in changed_images
+dir=Maps
 dir2=changed_images
 
 mkdir -p $dir2
 
 images=$(ls $dir)
+
 #yellow=rgb(255,255,0)
 dark_purple="rgb(95,0,95)"
-pozadina="rgb(219,223,239)"
-pozadina="rgb(251,252,253)"
-#pozadina="white"
-
+bckg="rgb(219,223,239)"
+bckg="rgb(251,252,253)"
 
 for image in $images; do
   # convert white to transparent
@@ -22,7 +22,7 @@ for image in $images; do
   
   # convert transparent background to some other
   convert $dir2/$image \
-  -background "${pozadina}" \
+  -background "${bckg}" \
   -alpha remove \
   -flatten \
   -alpha on \
