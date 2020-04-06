@@ -8,7 +8,7 @@
 <p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_current/plots/France_lin.jpg" alt="France COVID-19 prediction" width="900"></p>
 <p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_current/plots/China_lin.jpg" alt="China COVID-19 prediction" width="900"></p>
 <p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_current/plots/Iran_lin.jpg" alt="Iran COVID-19 prediction" width="900"></p>
-<p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_current/plots/United Kingdom_lin.jpg" alt="United Kingdom COVID-19 prediction" width="900"></p>
+<p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_current/plots/United_Kingdom_lin.jpg" alt="United_Kingdom COVID-19 prediction" width="900"></p>
 <p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_current/plots/Turkey_lin.jpg" alt="Turkey COVID-19 prediction" width="900"></p>
 <p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_current/plots/Switzerland_lin.jpg" alt="Switzerland COVID-19 prediction" width="900"></p>
 <p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_current/plots/Belgium_lin.jpg" alt="Belgium COVID-19 prediction" width="900"></p>
@@ -17,7 +17,7 @@
 <p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_current/plots/Austria_lin.jpg" alt="Austria COVID-19 prediction" width="900"></p>
 <p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_current/plots/Brazil_lin.jpg" alt="Brazil COVID-19 prediction" width="900"></p>
 <p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_current/plots/Portugal_lin.jpg" alt="Portugal COVID-19 prediction" width="900"></p>
-<p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_current/plots/South Korea_lin.jpg" alt="South Korea COVID-19 prediction" width="900"></p>
+<p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_current/plots/South_Korea_lin.jpg" alt="South_Korea COVID-19 prediction" width="900"></p>
 <p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_current/plots/Israel_lin.jpg" alt="Israel COVID-19 prediction" width="900"></p>
 <p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_current/plots/Sweden_lin.jpg" alt="Sweden COVID-19 prediction" width="900"></p>
 <p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_current/plots/Russia_lin.jpg" alt="Russia COVID-19 prediction" width="900"></p>
@@ -25,4 +25,3 @@
 <p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_current/plots/Norway_lin.jpg" alt="Norway COVID-19 prediction" width="900"></p>
 <p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_current/plots/Ireland_lin.jpg" alt="Ireland COVID-19 prediction" width="900"></p>
 <p align="center"><img src="https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_current/plots/Chile_lin.jpg" alt="Chile COVID-19 prediction" width="900"></p>
-
