@@ -1,10 +1,14 @@
 # `COVID-19 data and graphs`
 
-In the present repository one could find a few jupyter notebook and bash scripts for data analysis about COVID-19. There are two essential plots one could make:
+In the present repository one could find a few jupyter notebooks and bash scripts for data analysis of COVID-19.
+
+There are two essential plots one could make:
  * Plot of time series for each country (top 25 countries in jpg format, [Top 25](https://github.com/bojan-vujic/COVID-19/tree/master/Top_25_current/README.md)
  * Prediction plots for each country (top 25 in jpg format, [Top 25](https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_prediction/README.md)
 
-
+For rest of the countries, data are stored in two pdf files:
+ * [Top 100 - current]()  UBACI URL
+ * [Top 100 - prediction]()
 
 World
 -----
