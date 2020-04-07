@@ -82,7 +82,7 @@ done
 Have a nice day :)
 ```
 
-It will download the file `MM-DD-YYYY.csv` containing informations about number of total confirmed cases, number of recovered and death cases for each country that are currently presented at the [Worldometer page](https://www.worldometers.info/coronavirus/).
+It will download the file `MM-DD-YYYY.csv` containing informations about number of total confirmed cases, number of recovered, death and critical cases for each country that are currently presented at the [Worldometer page](https://www.worldometers.info/coronavirus/).
 
 Contact
 ---------
