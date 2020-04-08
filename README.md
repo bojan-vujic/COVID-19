@@ -7,8 +7,8 @@ There are two essential plots one could make:
  * [Prediction for Top 25 countries](https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_prediction/README.md), jpg format
 
 For the rest of the countries, data are stored in two pdf files:
- * [Top 100 - current]()  UBACI URL
- * [Top 100 - prediction]()
+ * [Top 100 - current](https://github.com/bojan-vujic/COVID-19/blob/master/Top_100_Current.pdf)  UBACI URL
+ * [Top 100 - prediction](https://github.com/bojan-vujic/COVID-19/blob/master/Top_100_Predictions.pdf)
 
 World
 -----
