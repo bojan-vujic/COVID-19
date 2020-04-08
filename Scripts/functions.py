@@ -172,14 +172,15 @@ def logistic_function(x, a, b, c, d):
 
 def optimal_parameters(i, country, confirmed, recovered, death):
     RMSs, parameter_array = [], []
-    MINs = range(0, 1001, 4)
-
-    # Though this method is relatively fast enough, there is still a more efficient way of doing this.
-    # Try Scipy optimiziation of objective function if time efficiency is imperative.
+    MINs1 = range(0, 1001, 5)
+    MINs2 = range(1200, 10200, 200)
+    MINs  = np.concatenate((MINs1, MINs2))
+    # Though this method is relatively fast enough, even on modest laptops, 
+    # there are still more efficient ways of doing this.
     for min_cases in MINs:
         x_time, x_day, conf_cases = data_gt_or_eq_than_min_cases(country, min_cases, confirmed, recovered, death)[:3]
 
-        if len(conf_cases) >= 4:
+        if len(conf_cases) >= 5:
             try:
                 params, pcov = curve_fit(logistic_function, x_day, conf_cases, \
                                          maxfev=10**6, method = 'lm', absolute_sigma=False)
@@ -188,7 +189,7 @@ def optimal_parameters(i, country, confirmed, recovered, death):
                 RMSs.append(rms)
                 parameter_array.append(params)
             except:
-                print("Can not find optimal parameters for %s" % country)
+                print("%3i %-20s : Can not find optimal parameters" % (i+1, country))
         else:
             RMSs.append(10**10) # arbitrarily large number
             parameter_array.append([0, 0, 0, 0])
@@ -233,6 +234,8 @@ def return_change_per_day_with_el0(array):
     a = [array[0]]
     b = np.diff(array, n=1)
     return np.append(a, b)
+
+
 
 
 

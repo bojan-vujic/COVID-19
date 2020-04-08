@@ -126,7 +126,7 @@ def date_after_n_days(first_day, n, fmt):
 
 def make_plot(i, country, x_time, y_confirmed, y_recovered, y_death, active_cases, SCALE, country_population,\
             x_confirmed, x_recovered, x_death, Last_n_days, delta_conf, delta_rec, delta_dea,\
-            image_url, flag_url, countries_to_display, fig_name, time_interval):
+            image_url, flag_url, countries_to_display, fig_name, x_axis_fmt, time_interval, output_format, output_dpi):
     
     plot_background = (1.0, 0.9804, 0.9804, 0.3)
     page_background = (219/255, 223/255, 239/255, 0.1)
@@ -138,7 +138,7 @@ def make_plot(i, country, x_time, y_confirmed, y_recovered, y_death, active_case
     fig = plt.figure(figsize=(x_size, y_size))
     
     fig.patch.set_facecolor(page_background)
-    plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%m-%d-%y'))
+    plt.gca().xaxis.set_major_formatter(mdates.DateFormatter(x_axis_fmt))
     plt.gca().xaxis.set_major_locator(mdates.DayLocator(interval = time_interval))
     
     lw = 4
@@ -146,34 +146,35 @@ def make_plot(i, country, x_time, y_confirmed, y_recovered, y_death, active_case
     
     if np.max(y_confirmed) >= 10**3 and np.max(y_confirmed) < 10**6:
         main_string = r'$\times 10^3$'
-        scaling_factor = 10**3
+        scale_factor = 10**3
     elif np.max(y_confirmed) >= 10**6:
         main_string = r'$\times 10^6$'
-        scaling_factor = 10**6
+        scale_factor = 10**6
     else:
         main_string = ''
-        scaling_factor = 1
+        scale_factor = 1
     
-    y_confirmed  = np.divide(y_confirmed, scaling_factor)
-    y_recovered  = np.divide(y_recovered, scaling_factor)
-    y_death      = np.divide(y_death, scaling_factor)
-    active_cases = np.divide(active_cases, scaling_factor)
+    y_confirmed  = np.divide(y_confirmed, scale_factor)
+    y_recovered  = np.divide(y_recovered, scale_factor)
+    y_death      = np.divide(y_death, scale_factor)
+    active_cases = np.divide(active_cases, scale_factor)
     
     # plot confirmed data
     plt.plot(x_time, y_confirmed, marker='o',markeredgecolor='black', markerfacecolor='yellow', color="royalblue",
-                     linestyle='-',  lw=lw, ms=ms, label=r'Confirmed', zorder=200,markeredgewidth=1.5, alpha=0.95)
-    
-    # plot recovered data
-    plt.plot(x_time, y_recovered, marker='o',markeredgecolor='black', markerfacecolor='yellow', color="limegreen",
-                     linestyle='-',  lw=lw, ms=ms, label=r'Recovered', zorder=200,markeredgewidth=1.5, alpha=0.95)
-    
-    # plot death data
-    plt.plot(x_time, y_death, marker='o',markeredgecolor='black', markerfacecolor='yellow', color="red",
-                     linestyle='-',  lw=lw, ms=ms, label=r'Death', zorder=200,markeredgewidth=1.5, alpha=0.95)
+                     linestyle='-',  lw=lw, ms=ms, label=r'Confirmed', zorder=400,markeredgewidth=1.5, alpha=0.95)
     
     # plot active cases
     plt.plot(x_time, active_cases, marker='h',markeredgecolor='black', markerfacecolor='yellow', color="purple",
-                     linestyle='-',  lw=lw, ms=ms, label=r'Active cases', zorder=200,markeredgewidth=1.5, alpha=0.95)
+                     linestyle='-',  lw=lw, ms=ms, label=r'Active cases', zorder=390,markeredgewidth=1.5, alpha=0.95)
+    
+    # plot recovered data
+    plt.plot(x_time, y_recovered, marker='o',markeredgecolor='black', markerfacecolor='yellow', color="limegreen",
+                     linestyle='-',  lw=lw, ms=ms, label=r'Recovered', zorder=380,markeredgewidth=1.5, alpha=0.95)
+    
+    # plot death data
+    plt.plot(x_time, y_death, marker='o',markeredgecolor='black', markerfacecolor='yellow', color="red",
+                     linestyle='-',  lw=lw, ms=ms, label=r'Death', zorder=370,markeredgewidth=1.5, alpha=0.95)
+    
     
     plt.fill_between(x_time, y_confirmed,y_recovered,color='khaki',alpha=.1)
     plt.fill_between(x_time ,y_recovered,y_death, color='limegreen',alpha=.02)
@@ -206,7 +207,7 @@ def make_plot(i, country, x_time, y_confirmed, y_recovered, y_death, active_case
     y_bottom, y_top = ax1.get_ylim()
     locs, labels = yticks()
     
-    if np.max(y_confirmed)*scaling_factor >= 10**6:
+    if np.max(y_confirmed)*scale_factor >= 10**6:
         ax1.yaxis.set_major_locator(MaxNLocator(integer=False))
         ax1.yaxis.set_major_formatter(FormatStrFormatter('%.2f'))
     else:
@@ -215,7 +216,7 @@ def make_plot(i, country, x_time, y_confirmed, y_recovered, y_death, active_case
     y_ticks = [y for y in locs]
     y_ticks = np.array(y_ticks)
     y_ticks = y_ticks[np.logical_and(y_ticks >= y_bottom, y_ticks <= y_top)]
-    if np.max(y_confirmed)*scaling_factor >= 10**6:
+    if np.max(y_confirmed)*scale_factor >= 10**6:
         max_y = len(str(np.max(np.round(y_ticks, 2)))) - 0.32
     else:
         max_y = len(str(int(np.max(y_ticks))))
@@ -280,8 +281,15 @@ def make_plot(i, country, x_time, y_confirmed, y_recovered, y_death, active_case
     
     ppad = 7
     ppadinches = ppad/25.4
-    pylab.savefig(fig_name, format='pdf', bbox_inches='tight', \
-                  pad_inches = ppadinches,facecolor=page_background)
+    
+    if output_format == 'pdf':
+        pylab.savefig(fig_name, format=output_format, bbox_inches='tight',
+                      pad_inches = ppadinches,facecolor=page_background, zorder = 1)
+    
+    if output_format == 'jpg' or output_format == 'png':
+        pylab.savefig(fig_name, format=output_format, bbox_inches='tight',dpi = output_dpi,
+                      pad_inches = ppadinches,facecolor=page_background, zorder = 1)
+    
     for cc in countries_to_display:
         if country == str(cc):
             plt.show()
@@ -294,7 +302,8 @@ def make_model_plot(i, country, x_time, conf_cases, recov_cases, death_cases, ac
                     SCALE, country_population, x_confirmed, x_recovered, x_death, critical, Last_n_days, \
                     delta_conf, image_url, countries_to_display, fig_name, time_interval,\
                     logistic_x, logistic_y, predict_for_n_days, fmt, lg_x, lg_y, flag_url, date_to_process, \
-                    time_array, time_interval_rate, conf_cases_rate, death_cases_rate,Last_n_days_for_rate):
+                    time_array, time_interval_rate, conf_cases_rate, death_cases_rate,\
+                    Last_n_days_for_rate, x_axis_fmt, output_format, output_dpi):
     
     plot_background = (1.0, 0.9803921568627451, 0.9803921568627451, 0.3)
     page_background = (219/255, 223/255, 239/255, 0.1)
@@ -305,26 +314,27 @@ def make_model_plot(i, country, x_time, conf_cases, recov_cases, death_cases, ac
     
     fig = plt.figure(figsize=(x_size, y_size))
     fig.patch.set_facecolor(page_background)
-    plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%b. %d'))
+    plt.gca().xaxis.set_major_formatter(mdates.DateFormatter(x_axis_fmt))
     plt.gca().xaxis.set_major_locator(mdates.DayLocator(interval = time_interval))
     
     lw = 4
     ms = 9
     if np.max(logistic_y) >= 10**3 and np.max(logistic_y) < 10**6:
         main_string = r'$\times 10^3$'
-        scaling_factor = 10**3
+        scale_factor = 10**3
     elif np.max(logistic_y) >= 10**6:
         main_string = r'$\times 10^6$'
-        scaling_factor = 10**6
+        scale_factor = 10**6
     else:
         main_string = ''
-        scaling_factor = 1
+        scale_factor = 1
 
-    conf_cases  = np.divide(conf_cases, scaling_factor)
-    logistic_y  = np.divide(logistic_y, scaling_factor)
-    lg_y        = np.divide(lg_y, scaling_factor)
-    recov_cases = np.divide(recov_cases, scaling_factor)
-    death_cases = np.divide(death_cases, scaling_factor)
+    conf_cases   = np.divide(conf_cases, scale_factor)
+    logistic_y   = np.divide(logistic_y, scale_factor)
+    lg_y         = np.divide(lg_y, scale_factor)
+    recov_cases  = np.divide(recov_cases, scale_factor)
+    death_cases  = np.divide(death_cases, scale_factor)
+    active_cases = np.divide(active_cases, scale_factor)
     
     if predictions_enabled == 'Yes':
         plt.plot(x_time, conf_cases, marker='o',markeredgecolor='black', markerfacecolor='yellow',
@@ -341,14 +351,15 @@ def make_model_plot(i, country, x_time, conf_cases, recov_cases, death_cases, ac
         # for some styling at the top right corner of the plot
         x1, y1 = x_time[len(x_time) - 1], conf_cases[len(conf_cases) - 1]
         x2, y2 = lg_x[len(lg_x) - 1], lg_y[len(lg_y) - 1]
-        delta  = int(np.round((y2 - y1)*scaling_factor, 0))
+        delta  = int(np.round((y2 - y1)*scale_factor, 0))
         
     else:
         plt.plot(x_time, conf_cases, marker='o',markeredgecolor='black', markerfacecolor='yellow',
              color="royalblue", linestyle='-', lw=lw, ms=ms, label=r'Confirmed', zorder=300,markeredgewidth=1.5, alpha=0.95)
     
-    plt.plot(x_time, recov_cases, marker='',color="limegreen", linestyle='-',lw=2, label=r'Recovered', zorder=10,alpha=0.95)
-    #plt.plot(x_time, death_cases, marker='',color="red", linestyle='-',lw=2, label=r'Death', zorder=300,alpha=0.95)
+    plt.plot(x_time, active_cases, marker='',color="maroon", linestyle='-',lw=2.5, label=r'Active', zorder=10,alpha=0.6)
+    plt.plot(x_time, recov_cases, marker='',color="limegreen", linestyle='-',lw=2.5, label=r'Recovered', zorder=10,alpha=0.6)
+    
     
     plt.fill_between(x_time, conf_cases, recov_cases, color='khaki',alpha=.1)
     plt.fill_between(x_time, recov_cases, death_cases, color='limegreen',alpha=.02)
@@ -386,26 +397,24 @@ def make_model_plot(i, country, x_time, conf_cases, recov_cases, death_cases, ac
     # Personally, I don't like it, so this will do the trick.
     # If you have more elegant way of doing it, please share. :)
     # -------------------------------------
-    y_bottom, y_top = ax1.get_ylim()
-    locs, labels = yticks()
-    
-    if np.max(logistic_y)*scaling_factor >= 10**6:
+    if np.max(logistic_y)*scale_factor >= 10**6:
         ax1.yaxis.set_major_locator(MaxNLocator(integer=False))
         ax1.yaxis.set_major_formatter(FormatStrFormatter('%.2f'))
     else:
         ax1.yaxis.set_major_locator(MaxNLocator(integer=True))
+    y_bottom, y_top = ax1.get_ylim()
+    locs, labels = yticks()
     
     y_ticks = [y for y in locs]
     y_ticks = np.array(y_ticks)
     y_ticks = y_ticks[np.logical_and(y_ticks >= y_bottom, y_ticks <= y_top)]
-    if np.max(logistic_y)*scaling_factor >= 10**6:
-        max_y = len(str(np.max(np.round(y_ticks, 2)))) - 0.32
+    if np.max(logistic_y)*scale_factor >= 10**6:
+        lens = [len(str(np.round(y, 2))) for y in y_ticks]
+        max_y = np.max(lens) - 0.35
     else:
         max_y = len(str(int(np.max(y_ticks))))
     
     lpad = (4 - max_y)*7.7 + 10
-    
-    # -------------------------------------
     pylab.ylabel(r'Number of cases %s' % main_string, size=20, labelpad=lpad)
     pylab.yticks(y_ticks, fontsize=16)
     pylab.xticks(fontsize=16)
@@ -427,9 +436,9 @@ def make_model_plot(i, country, x_time, conf_cases, recov_cases, death_cases, ac
     #-----------------------------------------------------------------------
     if predictions_enabled == 'Yes':
         
-        def predict(lg_y, num, scaling_factor, x_confirmed):
+        def predict(lg_y, num, scale_factor, x_confirmed):
             try:
-                predicted = int(np.round(lg_y[num] * scaling_factor))
+                predicted = int(np.round(lg_y[num] * scale_factor))
                 since_today = int(np.round((predicted - x_confirmed), 0))
                 a = f"+{since_today:,}".replace(",", " ")
                 b = f"{predicted:,}".replace(",", " ")
@@ -440,7 +449,7 @@ def make_model_plot(i, country, x_time, conf_cases, recov_cases, death_cases, ac
         def get_line(day, a, b):
             return r'%s & %5s & %5s' % (day, a, b)
         
-        sc = scaling_factor
+        sc = scale_factor
         
         # Text lines (this can be also done with "join")
         #-------------------------------------------------------------------------
@@ -497,37 +506,38 @@ def make_model_plot(i, country, x_time, conf_cases, recov_cases, death_cases, ac
     ax4.imshow(img)
     ax4.axis('off')
     
+    # this can be implemented within function arguments.
     arrays_to_plot     = [conf_cases_rate,        death_cases_rate]
-    colors             = ['royalblue',            'red']
-    legend_labels      = ['Daily cases',          'Daily deaths']
+    bar_plot_colors    = ['royalblue',            'red']
+    legend_labels      = ['Daily conf.',          'Daily deaths']
     bar_plot_positions = [[0.955, 0.2, 0.3, 0.25], [0.955, 0.465, 0.3, 0.25]]
     
     # make bar plots
     #----------------------------------------------------------------------------------------------------
     for idx in [0, 1]:
         array_to_plot = arrays_to_plot[idx]
-        if np.max(array_to_plot) >= 10000:
+        if np.max(array_to_plot) >= 10**4:
             legend_label = r'%s $\times 10^3$' % legend_labels[idx]
-            y_array = np.divide(array_to_plot, 1000)
+            y_array = np.divide(array_to_plot, 10**3)
         else:
             legend_label = r'%s' % legend_labels[idx]
             y_array = np.divide(array_to_plot, 1)
         
         bar_plot_position = bar_plot_positions[idx]
         ax5 = plt.axes(bar_plot_position)
-        ax5.bar(time_array, y_array, width = 0.7, alpha=0.7, color=colors[idx], zorder=500, label=legend_label)
+        ax5.bar(time_array, y_array, width = 0.7, alpha=0.7, color=bar_plot_colors[idx], zorder=500, label=legend_label)
         ax5.set_facecolor(plot_background)
         grid(b=True, which='major' , linestyle='-', color= 'lightgrey', linewidth=0.8)
         grid(b=True, which='minor', linestyle='--', color= 'lightgrey', linewidth=0.7)
         ax5.yaxis.set_major_locator(MaxNLocator(integer=True))
         plt.ylim(bottom = 0)
         plt.xlim(left = time_array[0] - timedelta(days=1), right = time_array[len(time_array)-1] + timedelta(days=1))
-        plt.yticks(fontsize=14)
+        plt.yticks(fontsize=13)
         if idx == 0:
-            plt.xticks(fontsize=14, rotation=30, ha='right')
+            plt.xticks(fontsize=13, rotation=30, ha='right')
         else:
             plt.xticks(visible=False)
-        plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%b. %d'))
+        plt.gca().xaxis.set_major_formatter(mdates.DateFormatter(x_axis_fmt))
         plt.gca().xaxis.set_major_locator(mdates.DayLocator(interval = time_interval_rate))
 
         for axis in ['top','bottom','left','right']:
@@ -538,10 +548,17 @@ def make_model_plot(i, country, x_time, conf_cases, recov_cases, death_cases, ac
                    length=4, width=1.0, zorder=2000, direction = "in")
         ax5.legend(loc = 2, ncol=1, fancybox=True, numpoints=1, markerscale=0.1, fontsize=14, framealpha=0.7).set_zorder(3000)
     #----------------------------------------------------------------------------------------------------
-
+    
     ppad = 7
     ppadinches = ppad/25.4
-    pylab.savefig(fig_name, format='pdf', bbox_inches='tight', pad_inches = ppadinches,facecolor=page_background, zorder = 1)
+    
+    if output_format == 'pdf':
+        pylab.savefig(fig_name, format=output_format, bbox_inches='tight',
+                      pad_inches = ppadinches,facecolor=page_background, zorder = 1)
+    
+    if output_format == 'jpg' or output_format == 'png':
+        pylab.savefig(fig_name, format=output_format, bbox_inches='tight',dpi = output_dpi,
+                      pad_inches = ppadinches,facecolor=page_background, zorder = 1)
     
     if country in countries_to_display:
         plt.show()

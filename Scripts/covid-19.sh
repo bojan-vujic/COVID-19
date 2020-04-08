@@ -3,11 +3,11 @@
 
 worldometer="https://www.worldometers.info/coronavirus/"
 
-# $bash covid-19.sh
+# $ bash covid-19.sh
 # date is today
 
-# $bash covid-19.sh 1
-# date is yesterday
+# $ bash covid-19.sh 1
+# date is 1 day before today (yesterday)
 
 # It is intended in case when downloading data for today after 00:00,
 # so that you won't have to change date manually.
@@ -142,6 +142,8 @@ sed -i 's/_/ /g
         s/Papua New,/Papua New Guinea,/g
         s/Miquelon//g
         s/Saint Pierre,/Saint Pierre Miquelon,/g
+        s/Principe//g
+        s/Sao Tome and,/Sao Tome and Principe,/g
         s/Country,.*//g
         s/Other,Cases,.*//g
         s/Total:,.*//g
@@ -200,6 +202,38 @@ cat $csv | awk -F"," '{print $1","$2","$4","$6","$8}'  >  $tmp  &&  mv $tmp $csv
 # This awk one liner will find sum of each column (World data) and append it to csv.
 awk -F"," '{for(i=2; i<=NF; i++) a[i] += $i; print $0} END {l="World"; i=2; while(i in a){l=l","a[i]; i++};print l}' $csv > $tmp
 
+# an array of countries within Europe
+europe=("Spain" "Italy" "Germany" "France" "United Kingdom" "Turkey" "Switzerland"
+"Belgium" "Netherlands" "Austria" "Portugal" "Sweden" "Russia" "Norway"
+"Ireland" "Czechia" "Denmark" "Poland" "Romania" "Luxembourg" "Serbia"
+"Finland" "Greece" "Iceland" "Ukraine" "Croatia" "Estonia" "Slovenia"
+"Moldova" "Lithuania" "Armenia" "Hungary" "Bosnia and Herzegovina"
+"Bulgaria" "Latvia" "Slovakia" "Cyprus" "Albania" "San Marino" "Malta"
+"Montenegro" "Isle of Man" "Kosovo" "Gibraltar" "Liechtenstein" "Monaco"
+"Greenland" "Vatican City" "Holy See" "Faeroe Islands")
+
+# sum each column for each European country
+echo "" > $dir3/${date}_EU.csv
+for i in "${!europe[@]}" ; do
+  country="${europe[$i]}"
+  grep "^${country}," $tmp >> $dir3/${date}_EU.csv
+done
+
+awk -F"," '{for(i=2;i<=NF;i++)a[i]+=$i}END{l="Europe";i=2;while(i in a){l=l","a[i];i++};print l}'\
+       $dir3/${date}_EU.csv >> $tmp
+
+
+# Subtract Europe from World, to create new "country" name 'World-Europe'
+# commented out, you can include if you want.
+
+#grep 'World,\|Europe,' $tmp |
+#awk -F, 'NR==1 {split($0,a)}; NR==2 {split($0,b)}
+#         END {printf"World-Europe";
+#              for(i=1; i<=NF; i++)
+#                if(a[i] ~ /^[0-9]+$/ && b[i] ~ /^[0-9]+$/)
+#                printf ",%d", a[i]-b[i]
+#             }' >> $tmp
+
 
 echo "Date\Country,Confirmed,Deaths,Recovered" > $csv
 echo "Date\Country,Confirmed,Deaths,Recovered,Critical" > ${date}_ALL.csv
@@ -227,6 +261,7 @@ while read -r line ; do
   perc=$(echo $counter $num_lines | awk '{printf"%8.2f",$1/$2*100}')
   echo -ne "\r   Progress = $perc %"
 done < $tmp
+
 mv $csv $dir/
 cp ${date}_Critical.csv $dir2/
 mv ${date}_Critical.csv $dir/
@@ -240,6 +275,22 @@ echo "Have a nice day :)"
 
 # this part is optional, either do it here, or in command line, or via jupyter notebook.
 # It is better do do it first in command line, to make sure you have all the python packages installed.
-python3.6 1-COVID-19_Process_daily_file_from_Worldometer.py $date
+python3 1-COVID-19_Process_daily_file_from_Worldometer.py $date
+
+# If you don't like writing $ python3 instead of python, you can make an alias in your .bashrc
+#$ python --version
+#  Python 2.7.17
+
+#$ python3 --version
+#  Python 3.6.9
+
+#$ alias python=python3
+#  python --version
+#  Python 3.6.9
+
+
+
+
+
 
 
