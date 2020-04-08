@@ -204,20 +204,23 @@ def make_plot(i, country, x_time, y_confirmed, y_recovered, y_death, active_case
     ax1.set_facecolor(plot_background)
     plt.gcf().autofmt_xdate()
     
-    y_bottom, y_top = ax1.get_ylim()
-    locs, labels = yticks()
+    
+    
     
     if np.max(y_confirmed)*scale_factor >= 10**6:
         ax1.yaxis.set_major_locator(MaxNLocator(integer=False))
         ax1.yaxis.set_major_formatter(FormatStrFormatter('%.2f'))
     else:
         ax1.yaxis.set_major_locator(MaxNLocator(integer=True))
+    y_bottom, y_top = ax1.get_ylim()
+    locs, labels = yticks()
     
     y_ticks = [y for y in locs]
     y_ticks = np.array(y_ticks)
     y_ticks = y_ticks[np.logical_and(y_ticks >= y_bottom, y_ticks <= y_top)]
     if np.max(y_confirmed)*scale_factor >= 10**6:
-        max_y = len(str(np.max(np.round(y_ticks, 2)))) - 0.32
+        lens = [len(str(np.round(y, 2))) for y in y_ticks]
+        max_y = np.max(lens) - 0.35
     else:
         max_y = len(str(int(np.max(y_ticks))))
     
