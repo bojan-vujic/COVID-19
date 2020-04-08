@@ -205,8 +205,6 @@ def make_plot(i, country, x_time, y_confirmed, y_recovered, y_death, active_case
     plt.gcf().autofmt_xdate()
     
     
-    
-    
     if np.max(y_confirmed)*scale_factor >= 10**6:
         ax1.yaxis.set_major_locator(MaxNLocator(integer=False))
         ax1.yaxis.set_major_formatter(FormatStrFormatter('%.2f'))
@@ -293,7 +291,7 @@ def make_plot(i, country, x_time, y_confirmed, y_recovered, y_death, active_case
         pylab.savefig(fig_name, format=output_format, bbox_inches='tight',dpi = output_dpi,
                       pad_inches = ppadinches,facecolor=page_background, zorder = 1)
     
-    for country in countries_to_display:
+    if country in countries_to_display:
         plt.show()
     plt.close(fig)
     
@@ -442,14 +440,17 @@ def make_model_plot(i, country, x_time, conf_cases, recov_cases, death_cases, ac
             try:
                 predicted = int(np.round(lg_y[num] * scale_factor))
                 since_today = int(np.round((predicted - x_confirmed), 0))
-                a = f"+{since_today:,}".replace(",", " ")
+                prefix = '$+$' if since_today >= 0 else '$-$'
+                since_today = np.abs(since_today)
+                a = f"{since_today:,}".replace(",", " ")
                 b = f"{predicted:,}".replace(",", " ")
+                a = '%s%s' % (prefix, a)
                 return a, b 
             except:
                 return 'NAN'
         
         def get_line(day, a, b):
-            return r'%s & %5s & %5s' % (day, a, b)
+            return r'%s & %s & %s' % (day, a, b)
         
         sc = scale_factor
         
