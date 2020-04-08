@@ -1,8 +1,7 @@
 # `COVID-19 Data analysis`
 
-In the present repository one could find few jupyter notebooks and bash scripts for data analysis of COVID-19 number of cases across the world.
 
-There are two essential plots one could make:
+There are two essential plots:
  * [Current cases for Top 25 countries](https://github.com/bojan-vujic/COVID-19/tree/master/Top_25_current/README.md), jpg format
  * [Prediction for Top 25 countries](https://github.com/bojan-vujic/COVID-19/blob/master/Top_25_prediction/README.md), jpg format
 
