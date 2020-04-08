@@ -1,4 +1,4 @@
-# `COVID-19 data and graphs`
+# `COVID-19 Data analysis`
 
 In the present repository one could find a few jupyter notebooks and bash scripts for data analysis of COVID-19.
 
