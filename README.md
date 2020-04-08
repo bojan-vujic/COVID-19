@@ -69,7 +69,7 @@ Sources for country flags:
 * https://en.wikipedia.org/wiki/Gallery_of_sovereign_state_flags
 
 Sources for country maps:
-* https://github.com/djaiss/mapsicon - they are further processed using a simple bash script (included) by my personal preferences.
+* https://github.com/djaiss/mapsicon - they are further processed by my personal preferences using a simple bash script [`image_process.sh`](https://github.com/bojan-vujic/COVID-19/blob/master/Scripts/image_process.sh).
 
 ```
 $ bash covid-19.sh
