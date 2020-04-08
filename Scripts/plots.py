@@ -144,14 +144,14 @@ def make_plot(i, country, x_time, y_confirmed, y_recovered, y_death, active_case
     lw = 4
     ms = 9
     
-    if np.max(y_confirmed) >= 10**3 and np.max(y_confirmed) < 10**6:
-        main_string = r'$\times 10^3$'
+    if np.max(y_confirmed) >= 10**4 and np.max(y_confirmed) < 10**6:
+        main_string  = r'$\times 10^3$'
         scale_factor = 10**3
     elif np.max(y_confirmed) >= 10**6:
-        main_string = r'$\times 10^6$'
+        main_string  = r'$\times 10^6$'
         scale_factor = 10**6
     else:
-        main_string = ''
+        main_string  = ''
         scale_factor = 1
     
     y_confirmed  = np.divide(y_confirmed, scale_factor)
@@ -290,9 +290,8 @@ def make_plot(i, country, x_time, y_confirmed, y_recovered, y_death, active_case
         pylab.savefig(fig_name, format=output_format, bbox_inches='tight',dpi = output_dpi,
                       pad_inches = ppadinches,facecolor=page_background, zorder = 1)
     
-    for cc in countries_to_display:
-        if country == str(cc):
-            plt.show()
+    for country in countries_to_display:
+        plt.show()
     plt.close(fig)
     
     return ;
