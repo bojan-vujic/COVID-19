@@ -40,6 +40,10 @@ Directories:
   - [`3-COVID-19_Model_prediction-with_SUBPLOT.ipynb`](https://github.com/bojan-vujic/COVID-19/blob/master/Scripts/3-COVID-19_Model_prediction-with_SUBPLOT.ipynb) This notebook will make some fancy plots alongside predictions for number of confirmed cases,
   - [`covid-19.sh`](https://github.com/bojan-vujic/COVID-19/blob/master/Scripts/covid-19.sh) This bash script will download current data from [`worldometer`](https://www.worldometers.info/coronavirus/) page and further process. As a result it will save 4 csv files: Confirmed, Recovered, Death, Critical. It will work together with the script [`1-COVID-19_Process_daily_file_from_Worldometer.py`](https://github.com/bojan-vujic/COVID-19/blob/master/Scripts/1-COVID-19_Process_daily_file_from_Worldometer.py).
   - [`functions.py`](https://github.com/bojan-vujic/COVID-19/blob/master/Scripts/functions.py) It contains most of the functions without which notebooks won't work.
+  - [`plots.py`](https://github.com/bojan-vujic/COVID-19/blob/master/Scripts/plots.py) It contains some of the functions and also two main functions for making plots.
+  - [`image_process.sh`](https://github.com/bojan-vujic/COVID-19/blob/master/Scripts/image_process.sh) A bash script that will process country map images.
+ * `Top_25_current`
+ * `Top_25_prediction`
   
   
   
