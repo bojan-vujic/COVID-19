@@ -41,8 +41,8 @@ Directories:
   - [`functions.py`](https://github.com/bojan-vujic/COVID-19/blob/master/Scripts/functions.py) It contains most of the functions without which notebooks won't work.
   - [`plots.py`](https://github.com/bojan-vujic/COVID-19/blob/master/Scripts/plots.py) It contains some of the functions and also two main functions for making plots.
   - [`image_process.sh`](https://github.com/bojan-vujic/COVID-19/blob/master/Scripts/image_process.sh) A bash script that will process country map images.
- * `Top_25_current`
- * `Top_25_prediction`
+ * [`Top_25_current`](https://github.com/bojan-vujic/COVID-19/tree/master/Top_25_current)
+ * [`Top_25_prediction`](https://github.com/bojan-vujic/COVID-19/tree/master/Top_25_prediction)
   
   
   
