@@ -81,6 +81,26 @@ echo "Converting html file using html2txt."
 html2text   -style pretty  $html > $csv
 mv $html $dir3/
 
+# New patch   Apr. 09 2020
+#**********************************************
+sed -i 's/* .*//g
+        s/             .*//g
+        s/South America .*//g
+        s/Asia .*//g
+        s/Europe .*//g
+        s/North America .*//g
+        s/Oceania .*//g
+        s/^\([^South]*\)Africa.*/\1/' $csv
+
+# remove empty spaces
+awk 'NF'  $csv  > $tmp  &&  mv $tmp $csv
+
+# match only at the end of line
+sed -i 's/  \+[A-Za-z][A-Za-z]*$//
+        s/ \+Europe//g
+        s/ \+Australia\///g' $csv
+#**********************************************
+
 # Replace all the empty spaces into commas, to create comma separated file, csv.
 sed -i 's/ \+/,/g'   $csv
 
@@ -285,7 +305,7 @@ python3 1-COVID-19_Process_daily_file_from_Worldometer.py $date
 #  Python 3.6.9
 
 #$ alias python=python3
-#  python --version
+#$ python --version
 #  Python 3.6.9
 
 
