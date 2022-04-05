@@ -62,13 +62,13 @@ Currently only 1 data source have been used for number of cases:
 
 * https://www.worldometers.info/coronavirus/ - Webpage with updated information abount the virus around the globe.
 
-To download the data for today from Worldometer, run the bash script [`covid-19.sh`.](https://github.com/bojan-vujic/COVID-19/blob/master/Scripts/covid-19.sh)
+To download the data for today from Worldometer, run the bash script [`covid-19.sh`.](https://github.com/bojan-vujic/COVID-19/blob/main/Scripts/covid-19.sh)
 
 Sources for country flags:
 * https://en.wikipedia.org/wiki/Gallery_of_sovereign_state_flags
 
 Sources for country maps:
-* https://github.com/djaiss/mapsicon - they are further processed by my personal preferences using a simple bash script [`image_process.sh`](https://github.com/bojan-vujic/COVID-19/blob/master/Scripts/image_process.sh).
+* https://github.com/djaiss/mapsicon - they are further processed by my personal preferences using a simple bash script [`image_process.sh`](https://github.com/bojan-vujic/COVID-19/blob/main/Scripts/image_process.sh).
 
 ```
 $ bash covid-19.sh
